@@ -1,9 +1,10 @@
 body {
-    background-color: gainsboro
+    background-color: #333
 }
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 251, 251, 0.31);
+    color: white;
 }
 
 .pull-right img-thumbnail {
