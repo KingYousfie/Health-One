@@ -6,77 +6,41 @@ include_once('defaults/head.php');
 
 <body>
 
-<div class="container">
+
     <?php
     include_once('defaults/header.php');
     include_once('defaults/menu.php');
     include_once('defaults/pictures.php');
     global $categories;
     ?>
-
+    <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/home">Home</a></li>
             <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
         </ol>
     </nav>
+
+
     <div class="row gy-3 ">
-
-
-    <?php 
+    <?php
         foreach($categories as $data) {
-
-            echo '<div class="col-sm-4 col-md-3">
-                 <div class="card">
-                     <div class="card-body text-center">
-                         <a href="/categories/1">
-                             <img class="product-img img-responsive center-block" src="/img/categories/roeitrainer.jpg"/>
-                         </a>
-                         <div class="card-title mb-3">'. $data.'</div>
-                     </div>
- 
-                 </div>
-             </div>';
-        }
-
-            ?>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/2">
-                            <img class="product-img img-responsive center-block" src='/img/categories/crosstrainer.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Crosstrainer</div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/3">
-                            <img class="product-img img-responsive center-block" src='/img/categories/hometrainer.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Hometrainer</div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4 col-md-3">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <a href="/categories/4">
-                            <img class="product-img img-responsive center-block" src='/img/categories/loopband.jpg'/>
-                        </a>
-                        <div class="card-title mb-3">Loopband</div>
-                    </div>
-
-                </div>
-            </div>
+            echo "
+            <div class='col-sm-4 col-md3'>
+            <div class='card'>
+            <div class='card-body text-center'>
+            <a href='/categories/$data->id'>
+                <img class='product-img img-responsive center-block' src='/img/categories/$data->image'/>
+            </a>
+            <div class='card-title mb-3'>$data->name</div>
+            ";
+        }?>
     </div>
 
-    <hr>
-    <?php
+
+
+
+   // <?php
     include_once('defaults/footer.php');
 
     ?>

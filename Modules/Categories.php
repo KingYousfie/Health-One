@@ -2,7 +2,11 @@
 // TODO Zorg dat de methodes goed ingevuld worden met de juiste queries.
 function getCategories()
 {
-    return ["poep", "meer peop"]; 
+    global $pdo;
+    $query = $pdo -> prepare( "Select * FROM categories ");
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_CLASS, 'Category');
+    return $result;
 }
 
 function getCategoryName(int $id)
