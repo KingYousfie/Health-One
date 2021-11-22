@@ -26,13 +26,14 @@ include_once('defaults/head.php');
     <?php
         foreach($categories as $data) {
             echo "
-            <div class='col-sm-4 col-md3'>
-            <div class='card'>
-            <div class='card-body text-center'>
+            <div class=' card col-sm-3 col-md3'>
+            <div card-body text-center>
             <a href='/categories/$data->id'>
                 <img class='product-img img-responsive center-block' src='/img/categories/$data->image'/>
             </a>
             <div class='card-title mb-3'>$data->name</div>
+            </div>
+            </div>
             ";
         }?>
     </div>
@@ -40,9 +41,9 @@ include_once('defaults/head.php');
 
 
 
-   // <?php
+   <?php
     include_once('defaults/footer.php');
-
+   include_once('defaults/head.php');
     ?>
 </div>
 

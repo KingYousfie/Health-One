@@ -7,6 +7,7 @@ function getCategories()
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_CLASS, 'Category');
     return $result;
+
 }
 
 function getCategoryName(int $id)
